@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+
+ <artifactId>xmltest</artifactId>
+ <version>0.2.1</version>
+ <packaging>jar</packaging>
+
+ <name>XML test</name>
+ <description>Allows specify JUnit tests as XML targets</description>
+
+ <groupId>com.developmentontheedge</groupId>
+
+ <properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ </properties>
+
+ <dependencies>
+  <dependency>
+   <groupId>junit</groupId>
+   <artifactId>junit</artifactId>
+   <version>4.12</version>
+   <scope>compile</scope>
+  </dependency>
+ </dependencies>
+
+ <build>
+  <plugins>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.3</version>
+    <configuration>
+     <source>1.7</source>
+     <target>1.7</target>
+     <compilerArgs>
+      <arg>-Xlint:all</arg>
+     </compilerArgs>
+    </configuration>
+   </plugin>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-javadoc-plugin</artifactId>
+    <version>2.10.3</version>
+    <executions>
+     <execution>
+      <id>attach-javadocs</id>
+      <goals>
+       <goal>jar</goal>
+      </goals>
+      <configuration>
+       <quiet>true</quiet>
+       <tags>
+         <tag>
+           <name>todo</name>
+           <!-- todo tag for all places -->
+           <placement>a</placement>
+           <head>TODO:</head>
+         </tag>
+       </tags>
+      </configuration>
+     </execution>
+    </executions>
+   </plugin>
+  </plugins>
+ </build>
+</project>
