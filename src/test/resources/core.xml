@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<testSuite name="core">
+
+ <test name="basic">
+  <parser>
+   <query><![CDATA[SELECT * FROM persons]]></query>
+   <format dbms="mysql"><![CDATA[SELECT * FROM persons]]></format>
+  </parser>
+ </test>
+
+ <test name="backtick">
+  <parser>
+   <query><![CDATA[SELECT * FROM `persons`]]></query>
+   <format dbms="mysql"><![CDATA[SELECT * FROM `persons`]]></format>
+   <format dbms="postgres"><![CDATA[SELECT * FROM "persons"]]></format>
+  </parser>
+ </test>
+
+</testSuite>
